@@ -1,6 +1,26 @@
-import { clerkMiddleware } from "@clerk/nextjs/server";
+import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server'
+import { NextResponse } from 'next/server'
 
-export default clerkMiddleware();
+const isPublicRoute = createRouteMatcher(['/', '/login(.*)', '/sign-in(.*)', '/sign-up(.*)'])
+
+const customMiddleware = async (req) => {
+  if (req.nextUrl.pathname.startsWith('/sign-in')) {
+    return NextResponse.rewrite(new URL('/login', req.url)) // rewrite- Internally shows a different page, but URL stays the same
+  }
+  return NextResponse.next()
+}
+
+
+const clerkWrapped = clerkMiddleware(async (auth, req) => {
+  if (!isPublicRoute(req)) {
+    await auth.protect()
+  }
+
+  // Apply custom logic after Clerk
+  return await customMiddleware(req)
+})
+
+export default clerkWrapped;
 
 export const config = {
   matcher: [

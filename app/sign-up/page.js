@@ -7,3 +7,8 @@ const Signup = () => {
 }
 
 export default Signup;
+
+export const metadata = {
+  title: "Sign Up",
+  description: "Welcome to Signup",
+};

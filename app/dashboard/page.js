@@ -7,3 +7,8 @@ const Dashboard = () => {
 }
 
 export default Dashboard;
+
+export const metadata = {
+  title: "Dashboard",
+  description: "Welcome to Dashboard",
+};
