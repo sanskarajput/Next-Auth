@@ -1,5 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 import {
   ClerkProvider,
@@ -30,6 +32,9 @@ export default function RootLayout({ children }) {
     <ClerkProvider>
       <html lang="en">
         <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+
+          <Navbar />
+
           <header className="flex justify-end items-center p-4 gap-4 h-16">
             <SignedOut>
               <SignInButton />
@@ -39,7 +44,11 @@ export default function RootLayout({ children }) {
               <UserButton />
             </SignedIn>
           </header>
+
           {children}
+
+          <Footer />
+
         </body>
       </html>
     </ClerkProvider>

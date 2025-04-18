@@ -1,6 +1,6 @@
 # Next.js Authentication with Interactive Background
 
-This is a **Next.js** project deployed on **Vercel** **[Next-Auth.vercel.app](Next-Auth.vercel.app)** featuring:
+This is a **Next.js** project deployed on **Vercel** *[sanskar-next-auth.vercel.app/](https://sanskar-next-auth.vercel.app/)* featuring:
 
 - Custom-built **authentication system** (no pre-built UI components from auth libraries)
 - Protected **Dashboard** page
