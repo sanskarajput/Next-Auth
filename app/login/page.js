@@ -1,12 +1,12 @@
-import React from 'react'
+import Login from '@/components/Login';
 
-const Login = () => {
+const LoginPage = () => {
     return (
-        <div>Login</div>
+        <Login></Login>
     )
 }
 
-export default Login;
+export default LoginPage;
 
 export const metadata = {
     title: "Login",

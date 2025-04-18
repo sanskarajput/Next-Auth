@@ -1,12 +1,12 @@
-import React from 'react'
+import Signup from '@/components/Signup';
 
-const Signup = () => {
+const SignupPage = () => {
   return (
-    <div>Signup</div>
+    <Signup></Signup>
   )
 }
 
-export default Signup;
+export default SignupPage;
 
 export const metadata = {
   title: "Sign Up",
