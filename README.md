@@ -52,6 +52,14 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ---
 
+### System diagram explaining how authentication flow works.
+
+![System Diagram](/public/system%20diagram.png)
+
+[System Diagram](https://www.tldraw.com/p/iog22eN0goR8z6GxVvnP5?d=v-962.561.6427.2971.page)
+
+---
+
 <div align=center>
 
 Thank you ❤️

@@ -12,8 +12,21 @@ const customMiddleware = async (req) => {
 
 
 const clerkWrapped = clerkMiddleware(async (auth, req) => {
+  const { userId, redirectToSignIn } = await auth()
   if (!isPublicRoute(req)) {
-    await auth.protect()
+    // Check if the user is authenticated
+    if (!userId) {
+      // Redirect to the login page if not authenticated
+      return NextResponse.redirect(new URL('/login', req.url))
+      // await auth.protect()
+    }
+
+    return NextResponse.next()
+  }
+
+  if (userId) {
+    // Optionally, you can add custom logic here for authenticated users
+    return NextResponse.redirect(new URL('/dashboard', req.url))
   }
 
   // Apply custom logic after Clerk

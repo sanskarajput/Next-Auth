@@ -1,0 +1,160 @@
+.text-container {
+    z-index: 100;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    font-size: 96px;
+    color: white;
+    opacity: 0.8;
+    user-select: none;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+
+
+@keyframes moveInCircle {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes moveVertical {
+    0% {
+        transform: translateY(-50%);
+    }
+
+    50% {
+        transform: translateY(50%);
+    }
+
+    100% {
+        transform: translateY(-50%);
+    }
+}
+
+@keyframes moveHorizontal {
+    0% {
+        transform: translateX(-50%) translateY(-10%);
+    }
+
+    50% {
+        transform: translateX(50%) translateY(10%);
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(-10%);
+    }
+}
+
+.gradient-bg {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: -1;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+}
+
+.gradient-bg svg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+}
+
+.gradient-bg .gradients-container {
+    filter: url(#goo) blur(60px);
+    width: 100%;
+    height: 150%;
+}
+
+.gradient-bg .g1,
+.gradient-bg .g2,
+.gradient-bg .g3,
+.gradient-bg .g4,
+.gradient-bg .g5,
+.gradient-bg .interactive {
+    position: absolute;
+    mix-blend-mode: var(--blending);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.gradient-bg .g1 {
+    background: radial-gradient(circle at center, rgba(var(--color), 0.6) 0, rgba(var(--color), 0) 50%);
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2);
+    left: calc(50% - var(--circle-size) / 2);
+    transform-origin: center center;
+    animation: moveVertical 8s ease infinite;
+    opacity: 1;
+}
+
+.gradient-bg .g2 {
+    background: radial-gradient(circle at center, rgba(var(--color), 0.6) 0, rgba(var(--color), 0) 50%);
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2);
+    left: calc(50% - var(--circle-size) / 2);
+    transform-origin: calc(50% - 400px);
+    animation: moveInCircle 8s reverse infinite;
+    opacity: 1;
+}
+
+.gradient-bg .g3 {
+    background: radial-gradient(circle at center, rgba(var(--color), 0.6) 0, rgba(var(--color), 0) 50%);
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2 + 200px);
+    left: calc(50% - var(--circle-size) / 2 - 500px);
+    transform-origin: calc(50% + 400px);
+    animation: moveInCircle 8s linear infinite;
+    opacity: 1;
+}
+
+.gradient-bg .g4 {
+    background: radial-gradient(circle at center, rgba(var(--color), 0.6) 0, rgba(var(--color), 0) 50%);
+    width: var(--circle-size);
+    height: var(--circle-size);
+    top: calc(50% - var(--circle-size) / 2);
+    left: calc(50% - var(--circle-size) / 2);
+    transform-origin: calc(50% - 200px);
+    animation: moveHorizontal 8s ease infinite;
+    opacity: 0.7;
+}
+
+.gradient-bg .g5 {
+    background: radial-gradient(circle at center, rgba(var(--color), 0.6) 0, rgba(var(--color), 0) 50%);
+    width: calc(var(--circle-size));
+    height: calc(var(--circle-size));
+    top: calc(50% - var(--circle-size));
+    left: calc(110% - var(--circle-size));
+    transform-origin: calc(50% - 500px) ;
+    animation: moveInCircle 8s ease infinite;
+    opacity: 1;
+}
+
+.gradient-bg .interactive {
+    background: radial-gradient(circle at center, rgba(var(--color-interactive), 0.6) 0, rgba(var(--color-interactive), 0) 50%);
+    width: 45%;
+    height: 45%;
+    top: -15%;
+    left: -15%;
+    opacity: 0.7;
+}
